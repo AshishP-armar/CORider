@@ -1,4 +1,4 @@
-# CoRider Assignment
+# <img src="corider.jpg" alt="Logo" style="width: 30px; height: auto;" /> CoRider Assignment
 
 ## Flask Application for CRUD operations on MongoDB.
 
