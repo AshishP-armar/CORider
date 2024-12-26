@@ -32,7 +32,7 @@ This is a simple Flask application that implements CRUD (Create, Read, Update, D
 
 ## **Project Structure**
 ```bash
-flask-mongo-crud/
+CORider/
 │
 ├── app/
 │   ├── __init__.py           # Initialize Flask app and MongoDB connection
