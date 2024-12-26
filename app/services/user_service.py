@@ -6,17 +6,6 @@ from app.models.user import User  # Import the User class
 
 class UserService:
 
-    def get_next_sequence(self, sequence_name):
-        # Find the counter document and increment it atomically
-        counter = mongo.db.counters.find_one_and_update(
-            {"_id": sequence_name},
-            {"$inc": {"sequence_value": 1}},
-            return_document=True,
-            upsert=True
-        )
-        return counter['sequence_value']
-
-
     def get_all_users(self):
         users = mongo.db.users.find()
         if not users:
@@ -28,7 +17,6 @@ class UserService:
         return User.from_json(user) if user else "User Not Found"
 
     def create_user(self, data):
-        data['_id'] = self.get_next_sequence("user_id")
         mongo.db.users.insert_one(data)
 
     def update_user(self, user_id, data):
