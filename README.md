@@ -75,4 +75,7 @@ python -m venv .venv
    ```bash
    pip install -r requirements.txt  # For Flask
    ```
-
+3. To run:
+   ```bash
+   python run.py
+   ```
