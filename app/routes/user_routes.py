@@ -10,6 +10,7 @@ def get_users():
 
 @user_bp.route('/<id>', methods=['GET'])
 def get_user(id):
+    print("id of user is : ",id)
     user = user_service.get_user_by_id(id)
     if not user:
         return jsonify({"error": "User not found"}), 404
@@ -24,6 +25,7 @@ def create_user():
 @user_bp.route('/<id>', methods=['PUT'])
 def update_user(id):
     data = request.json
+    print(data,id)
     updated = user_service.update_user(id, data)
     if not updated:
         return jsonify({"error": "User not found"}), 404
